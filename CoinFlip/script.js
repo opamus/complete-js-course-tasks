@@ -8,12 +8,12 @@ const flipCoin = () => {
   const value = Math.floor(Math.random() * 2);
 
   if (value === 1) {
-    coin.style.animation = "flip-heads 3s forwards";
+    coin.style.animation = "flip-heads 2s forwards";
     setTimeout(() => {
       headsOrTails.innerText = "Heads";
     }, 1800);
   } else {
-    coin.style.animation = "flip-tails 3s forwards";
+    coin.style.animation = "flip-tails 2s forwards";
     setTimeout(() => {
       headsOrTails.innerText = "Tails";
     }, 1800);
