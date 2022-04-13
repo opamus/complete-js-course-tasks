@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Simple Coin Flip</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #000;
+      }
+      @keyframes flip-heads {
+        0% {
+          transform: rotateX(0);
+        }
+        100% {
+          transform: rotateX(1800deg);
+        }
+      }
+
+      @keyframes flip-tails {
+        0% {
+          transform: rotateX(0);
+        }
+        100% {
+          transform: rotateX(2160deg);
+        }
+      }
+      h1 {
+        font-family: sans-serif;
+        font-size: 50px;
+        line-height: 1.3;
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+        color: white;
+      }
+      #CoinContainer {
+        cursor: pointer;
+      }
+      #Coin {
+        display: flex;
+        width: 150px;
+        border-radius: 50%;
+        border: solid #a6a6a6;
+        border-width: 20px;
+        height: 150px;
+        background-color: burlywood;
+        justify-content: center;
+        align-items: center;
+      }
+      h2 {
+        font-size: 50px;
+        pointer-events: none;
+        user-select: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Simple Coin Flip</h1>
+    <div id="CoinContainer">
+      <div id="Coin">
+        <h2 id="value">Flip</h2>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
