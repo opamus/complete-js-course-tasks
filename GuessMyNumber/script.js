@@ -13,22 +13,20 @@ const execute = () => {
   if (!guess) {
     // Empty guess, no deduction of score
     msg.textContent = 'No number!';
-  } else if (score === 0) {
-    // Score hits 0 and you lose the game
-    document.querySelector('.check').removeEventListener('click', execute);
-    document.querySelector('body').style.background = '#9c5449';
-    msg.textContent = 'You lose the game :(';
-    document.querySelector('.number').textContent = ':(';
-  } else if (guess > winningNumber) {
-    // Guess is higher than winning number
-    msg.textContent = 'Lower!';
+  } else if (guess !== winningNumber) {
+    // Guess is lower or higher than winning number
+    guess < winningNumber
+      ? (msg.textContent = 'Higher!')
+      : (msg.textContent = 'Lower!');
     score--;
     scoreLabel.textContent = score;
-  } else if (guess < winningNumber) {
-    // Guess is lower than winning number
-    msg.textContent = 'Higher!';
-    score--;
-    scoreLabel.textContent = score;
+    // Also check here if the score is lower than 1 then you lose the game
+    if (score < 1) {
+      document.querySelector('.check').removeEventListener('click', execute);
+      document.querySelector('body').style.background = '#9c5449';
+      msg.textContent = 'You lose the game :(';
+      document.querySelector('.number').textContent = ':(';
+    }
   } else if (guess === winningNumber) {
     // Winning guess!
     score > highScore.textContent
