@@ -15,9 +15,7 @@ const execute = () => {
     msg.textContent = 'No number!';
   } else if (guess !== winningNumber) {
     // Guess is lower or higher than winning number
-    guess < winningNumber
-      ? (msg.textContent = 'Higher!')
-      : (msg.textContent = 'Lower!');
+    msg.textContent = guess < winningNumber ? 'Higher!' : 'Lower!';
     score--;
     scoreLabel.textContent = score;
     // Also check here if the score is lower than 1 then you lose the game
