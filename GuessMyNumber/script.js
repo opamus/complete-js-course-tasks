@@ -54,6 +54,7 @@ const againBtn = document
     document.querySelector('.score').textContent = 20;
     document.querySelector('.guess').value = null;
     document.querySelector('.number').textContent = '?';
+    // Reset winning number
     winningNumber = winningNumber;
     msg.textContent = 'Start Guessing!';
     document.querySelector('.check').addEventListener('click', execute);
